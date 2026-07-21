@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { saveBooking, getBookings } from '@/lib/storage'
+import { saveBooking, getBookings } from '@/lib/mongo'
 import { sendBookingConfirmation, sendAdminNotification } from '@/lib/email'
 import { v4 as uuidv4 } from 'uuid'
-import type { Booking } from '@/lib/storage'
+import type { Booking } from '@/lib/mongo'
 
 export async function POST(request: NextRequest) {
   try {

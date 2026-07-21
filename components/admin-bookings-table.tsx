@@ -1,4 +1,4 @@
-import type { Booking } from '@/lib/storage'
+import type { Booking } from '@/lib/mongo'
 
 const STATUS_COLORS: Record<string, string> = {
   new: 'bg-blue-100 text-blue-800',

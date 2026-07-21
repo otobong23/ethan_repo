@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { validateSession, clearSession } from '@/lib/auth'
-import { updateBooking, deleteBooking } from '@/lib/storage'
+import { updateBooking, deleteBooking } from '@/lib/mongo'
 
 export async function PUT(
   request: NextRequest,

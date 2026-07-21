@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { AdminBookingsTable } from '@/components/admin-bookings-table'
-import type { Booking } from '@/lib/storage'
+import type { Booking } from '@/lib/mongo'
 import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export default function AdminDashboardPage() {
