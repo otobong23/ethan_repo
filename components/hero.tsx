@@ -1,13 +1,16 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { AnimatedSection } from './ui/animated-section'
 
 export function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
-        <div className="space-y-8 animate-fade-in">
+        <AnimatedSection className="space-y-8" direction="left">
           <div className="space-y-4">
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-navy leading-tight">
               Building Wealth Through Intelligent Investment Strategies
@@ -42,19 +45,19 @@ export function Hero() {
               <p className="text-sm text-gray-600">Investors Advised</p>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Right Image */}
-        <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl">
+        <AnimatedSection className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl" direction='up'>
           <Image
-            src="/hero.png"
+            src="/hero.jpeg"
             alt="Investment Professional"
             fill
             className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-linear-to-t from-navy/10 to-transparent"></div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   )

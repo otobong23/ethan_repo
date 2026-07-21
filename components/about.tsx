@@ -43,7 +43,7 @@ export function About() {
 
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/about.png"
+              src="/about.jpeg"
               alt={USER_CONSTANT.fullName}
               fill
               className="object-cover"
