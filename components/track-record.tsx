@@ -1,3 +1,5 @@
+import { USER_CONSTANT } from "@/constants/profile.constant"
+
 export function TrackRecord() {
   const stats = [
     { label: 'Years of Experience', value: '10+' },
@@ -61,7 +63,7 @@ export function TrackRecord() {
             <div className="grid md:grid-cols-2 gap-6">
               {credentials.map((cred) => (
                 <div key={cred} className="flex items-start gap-3 bg-white rounded-lg p-4">
-                  <div className="w-5 h-5 bg-gold rounded-full mt-0.5 flex-shrink-0"></div>
+                  <div className="w-5 h-5 bg-gold rounded-full mt-0.5 shrink-0"></div>
                   <span className="text-gray-700">{cred}</span>
                 </div>
               ))}
@@ -69,10 +71,10 @@ export function TrackRecord() {
           </div>
         </div>
 
-        {/* Why Work With Ethan */}
+        {/* Why Work With user */}
         <div>
           <h3 className="font-serif text-3xl font-bold text-navy mb-8 text-center">
-            Why Work With Ethan
+            Why Work With {USER_CONSTANT.firstName}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyWork.map((reason) => (

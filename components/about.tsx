@@ -34,10 +34,10 @@ export function About() {
               {USER_CONSTANT.fullName} is a Private Equity Manager and Investment Strategist dedicated to helping individuals, entrepreneurs, and businesses grow wealth through carefully selected investment opportunities. His investment philosophy combines disciplined research, strategic risk management, and long-term value creation across multiple asset classes.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              With experience spanning private equity, cryptocurrency, public markets, venture capital, and alternative investments, Ethan focuses on identifying opportunities that align with each client&apos;s financial goals and risk profile.
+              With experience spanning private equity, cryptocurrency, public markets, venture capital, and alternative investments, {USER_CONSTANT.firstName} focuses on identifying opportunities that align with each client&apos;s financial goals and risk profile.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Rather than pursuing short-term speculation, his approach emphasizes sustainable wealth creation through structured investment planning, market analysis, and portfolio diversification. Whether working with experienced investors or those beginning their investment journey, Ethan provides professional guidance designed to simplify complex financial decisions.
+              Rather than pursuing short-term speculation, his approach emphasizes sustainable wealth creation through structured investment planning, market analysis, and portfolio diversification. Whether working with experienced investors or those beginning their investment journey, {USER_CONSTANT.firstName} provides professional guidance designed to simplify complex financial decisions.
             </p>
           </div>
 

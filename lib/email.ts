@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-import type { Booking } from './storage'
+import type { Booking } from './mongo'
 import { USER_CONSTANT } from '@/constants/profile.constant'
 
 // Create a transporter (using ethereal for development, Gmail for production)
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 export async function sendBookingConfirmation(booking: Booking): Promise<void> {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_FROM || 'noreply@ethanledger.com',
+      from: process.env.EMAIL_FROM || 'noreply@rosscampbell.com',
       to: booking.email,
       subject: `Consultation Booking Confirmation - ${USER_CONSTANT.fullName}`,
       html: `
@@ -65,7 +65,7 @@ export async function sendBookingConfirmation(booking: Booking): Promise<void> {
 export async function sendAdminNotification(booking: Booking): Promise<void> {
   try {
     const mailOptions = {
-      from: process.env.EMAIL_FROM || 'noreply@ethanledger.com',
+      from: process.env.EMAIL_FROM || 'noreply@rosscampbell.com',
       to: process.env.ADMIN_EMAIL || USER_CONSTANT.email_address,
       subject: `New Consultation Booking - ${booking.name}`,
       html: `
