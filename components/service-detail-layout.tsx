@@ -17,6 +17,7 @@ export function ServiceDetailLayout({
   subtitle,
   heroDescription,
   faqs,
+  children
 }: ServiceDetailLayoutProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
@@ -60,6 +61,7 @@ export function ServiceDetailLayout({
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         {/* Render children - service-specific content */}
+        {children}
       </section>
 
       {/* FAQ Section */}
