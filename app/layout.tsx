@@ -1,9 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export const metadata: Metadata = {
-  title: 'Ethan Ledger | Private Equity Manager & Investment Strategist',
+  title: `${USER_CONSTANT.fullName} | Private Equity Manager & Investment Strategist`,
   description: 'Professional investment portfolio manager specializing in private equity, cryptocurrency, stocks, real estate, and alternative investments.',
   generator: 'v0.app',
   icons: {

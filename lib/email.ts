@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 import type { Booking } from './storage'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 // Create a transporter (using ethereal for development, Gmail for production)
 const transporter = nodemailer.createTransport({
@@ -17,7 +18,7 @@ export async function sendBookingConfirmation(booking: Booking): Promise<void> {
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'noreply@ethanledger.com',
       to: booking.email,
-      subject: 'Consultation Booking Confirmation - Ethan Ledger',
+      subject: `Consultation Booking Confirmation - ${USER_CONSTANT.fullName}`,
       html: `
         <div style="font-family: 'Poppins', sans-serif; max-width: 600px; margin: 0 auto; color: #0B1F3A;">
           <div style="background: linear-gradient(135deg, #0B1F3A 0%, #1a3a52 100%); padding: 40px; text-align: center; border-radius: 8px 8px 0 0;">
@@ -43,12 +44,12 @@ export async function sendBookingConfirmation(booking: Booking): Promise<void> {
             </p>
             
             <p style="font-size: 14px; line-height: 1.6; margin-bottom: 8px;">Best regards,</p>
-            <p style="font-size: 14px; font-weight: 600; color: #D4AF37; margin: 0;">Ethan Ledger</p>
+            <p style="font-size: 14px; font-weight: 600; color: #D4AF37; margin: 0;">${USER_CONSTANT.fullName}</p>
             <p style="font-size: 12px; color: #6B7280; margin: 4px 0;">Private Equity Manager | Investment Strategist</p>
           </div>
           
           <div style="background: #0B1F3A; padding: 20px; text-align: center; border-radius: 0 0 8px 8px;">
-            <p style="color: #D4AF37; font-size: 12px; margin: 0;">ethanledger90@gmail.com | +44 7446318580</p>
+            <p style="color: #D4AF37; font-size: 12px; margin: 0;">${USER_CONSTANT.email_address} | +44 7446318580</p>
           </div>
         </div>
       `,
@@ -65,7 +66,7 @@ export async function sendAdminNotification(booking: Booking): Promise<void> {
   try {
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'noreply@ethanledger.com',
-      to: process.env.ADMIN_EMAIL || 'ethanledger90@gmail.com',
+      to: process.env.ADMIN_EMAIL || USER_CONSTANT.email_address,
       subject: `New Consultation Booking - ${booking.name}`,
       html: `
         <div style="font-family: 'Poppins', sans-serif; max-width: 600px; margin: 0 auto; color: #0B1F3A;">

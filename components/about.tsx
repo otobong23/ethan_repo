@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Check } from 'lucide-react'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export function About() {
   const coreValues = [
@@ -19,7 +20,7 @@ export function About() {
         {/* About Heading */}
         <div className="mb-16 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-navy mb-4">
-            About Ethan Ledger
+            About {USER_CONSTANT.fullName}
           </h2>
           <p className="text-xl text-gold font-semibold">
             Private Equity Manager & Investment Strategist
@@ -30,7 +31,7 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="space-y-6">
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ethan Ledger is a Private Equity Manager and Investment Strategist dedicated to helping individuals, entrepreneurs, and businesses grow wealth through carefully selected investment opportunities. His investment philosophy combines disciplined research, strategic risk management, and long-term value creation across multiple asset classes.
+              {USER_CONSTANT.fullName} is a Private Equity Manager and Investment Strategist dedicated to helping individuals, entrepreneurs, and businesses grow wealth through carefully selected investment opportunities. His investment philosophy combines disciplined research, strategic risk management, and long-term value creation across multiple asset classes.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               With experience spanning private equity, cryptocurrency, public markets, venture capital, and alternative investments, Ethan focuses on identifying opportunities that align with each client&apos;s financial goals and risk profile.
@@ -43,7 +44,7 @@ export function About() {
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
             <Image
               src="/about.png"
-              alt="Ethan Ledger"
+              alt={USER_CONSTANT.fullName}
               fill
               className="object-cover"
             />
@@ -88,7 +89,7 @@ export function About() {
           <div className="grid md:grid-cols-4 gap-4">
             {coreValues.map((value) => (
               <div key={value} className="flex items-center gap-3 bg-light-gray rounded-lg p-4">
-                <Check className="w-5 h-5 text-emerald flex-shrink-0" />
+                <Check className="w-5 h-5 text-emerald shrink-0" />
                 <span className="font-medium text-navy">{value}</span>
               </div>
             ))}

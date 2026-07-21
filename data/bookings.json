@@ -13,5 +13,37 @@
     "message": "expecting to profit from my equity",
     "status": "new",
     "lastUpdated": "2026-07-21T00:19:53.854Z"
+  },
+  {
+    "id": "1068e3b4-0222-412a-a7ba-8f944ea34f72",
+    "createdAt": "2026-07-21T11:13:00.424Z",
+    "name": "miracle udoh",
+    "email": "bonifacemiracle23@gmail.com",
+    "phone": "09165787036",
+    "investmentType": "Private Equity Investments",
+    "investmentAmount": "20000",
+    "preferredDates": [
+      "Next 2 days",
+      "Next 5 days"
+    ],
+    "message": "I hope to make an excellent investment as soon as possible",
+    "status": "new",
+    "lastUpdated": "2026-07-21T11:13:00.424Z"
+  },
+  {
+    "id": "3520a830-026c-4f54-b141-fd2e48ebd570",
+    "createdAt": "2026-07-21T11:54:32.813Z",
+    "name": "Miracle Boniface",
+    "email": "bonifacemiracle23@gmail.com",
+    "phone": "09165787036",
+    "investmentType": "Global Currency Market Advisory (Forex)",
+    "investmentAmount": "100000",
+    "preferredDates": [
+      "Next 7 days",
+      "Next 5 days"
+    ],
+    "message": "money needs to be made",
+    "status": "new",
+    "lastUpdated": "2026-07-21T11:54:32.813Z"
   }
 ]

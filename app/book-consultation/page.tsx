@@ -1,10 +1,11 @@
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { BookingForm } from '@/components/booking-form'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export const metadata = {
-  title: 'Book a Consultation | Ethan Ledger',
-  description: 'Schedule a professional consultation with Ethan Ledger to discuss your investment goals and opportunities.',
+  title: `Book a Consultation | ${USER_CONSTANT.fullName}`,
+  description: `Schedule a professional consultation with ${USER_CONSTANT.fullName} to discuss your investment goals and opportunities.`,
 }
 
 export default function BookConsultationPage() {
@@ -18,7 +19,7 @@ export default function BookConsultationPage() {
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Book Your Consultation</h1>
             <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-              Ready to explore investment opportunities? Schedule a one-on-one consultation with Ethan Ledger to discuss your financial goals and discover tailored investment strategies.
+              Ready to explore investment opportunities? Schedule a one-on-one consultation with {USER_CONSTANT.fullName} to discuss your financial goals and discover tailored investment strategies.
             </p>
           </div>
         </section>

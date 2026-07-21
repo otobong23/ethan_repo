@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export default function AdminLoginPage() {
   const [password, setPassword] = useState('')
@@ -35,11 +36,11 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary to-primary/95 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-primary to-primary/95 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-secondary mb-2">Ethan Ledger</h1>
+          <h1 className="text-4xl font-serif font-bold text-secondary mb-2">{USER_CONSTANT.fullName}</h1>
           <p className="text-primary-foreground/80">Admin Console</p>
         </div>
 

@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Icon } from '@iconify/react';
+import { USER_CONSTANT } from '@/constants/profile.constant';
 
 export function Contact() {
   const contactMethods = [
     {
       icon: 'ic:baseline-whatsapp',
       label: 'Phone',
-      value: '+44 7446318580',
+      value: '',
+      link: USER_CONSTANT.whatsapp_link,
       action: 'Message Now',
     },
     {
       icon: 'lucide:mail',
       label: 'Email',
-      value: 'ethanledger90@gmail.com',
+      value: USER_CONSTANT.email_address,
       action: 'Send Email',
     },
     {
@@ -59,7 +61,7 @@ export function Contact() {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 ) : (
-                  <a href={method.label === 'Phone' ? `tel:${method.value}` : `mailto:${method.value}`} className="text-navy font-semibold hover:text-gold transition-colors flex items-center justify-center gap-2 w-full">
+                  <a target='_blank' href={method.label === 'Phone' ? `${method.link}` : `mailto:${method.value}`} className="text-navy font-semibold hover:text-gold transition-colors flex items-center justify-center gap-2 w-full">
                     {method.action}
                     <ArrowRight className="w-4 h-4" />
                   </a>
@@ -70,7 +72,7 @@ export function Contact() {
         </div>
 
         {/* Legal Disclaimer */}
-        <div className="bg-white rounded-2xl p-8 md:p-12">
+        <div className="bg-white rounded-2xl p-8 md:p-12" id='legal-disclaimer'>
           <h3 className="font-serif text-2xl font-bold text-navy mb-6">Legal Disclaimer</h3>
           <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
             <p>

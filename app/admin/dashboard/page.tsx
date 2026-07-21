@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { AdminBookingsTable } from '@/components/admin-bookings-table'
 import type { Booking } from '@/lib/storage'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export default function AdminDashboardPage() {
   const [bookings, setBookings] = useState<Booking[]>([])
@@ -107,7 +108,7 @@ export default function AdminDashboardPage() {
       {/* Header */}
       <header className="bg-white border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-serif font-bold text-primary">Ethan Ledger Admin</h1>
+          <h1 className="text-2xl font-serif font-bold text-primary">{USER_CONSTANT.fullName} Admin</h1>
           <Button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white"

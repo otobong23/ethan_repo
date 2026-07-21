@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import { USER_CONSTANT } from '@/constants/profile.constant'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,9 +22,9 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-navy text-white rounded-lg flex items-center justify-center font-serif font-bold text-lg">
-            EL
+            {USER_CONSTANT.initials}
           </div>
-          <span className="font-serif font-bold text-xl text-navy hidden sm:inline">Ethan Ledger</span>
+          <span className="font-serif font-bold text-xl text-navy hidden sm:inline">{USER_CONSTANT.fullName}</span>
         </Link>
 
         {/* Desktop Navigation */}
