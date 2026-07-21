@@ -12,6 +12,7 @@ export default function AdminDashboardPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState('')
   const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null)
+  const [bookingToDelete, setBookingToDelete] = useState<string | null>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -85,8 +86,15 @@ export default function AdminDashboardPage() {
     }
   }
 
-  const handleDelete = async (bookingId: string) => {
-    if (!confirm('Are you sure you want to delete this booking?')) return
+  // Opens the confirmation modal instead of window.confirm
+  const handleDelete = (bookingId: string) => {
+    setBookingToDelete(bookingId)
+  }
+
+  // Runs the actual deletion once the user confirms in the modal
+  const confirmDelete = async () => {
+    if (!bookingToDelete) return
+    const bookingId = bookingToDelete
 
     try {
       const response = await fetch(`/api/admin/bookings/${bookingId}`, {
@@ -100,7 +108,13 @@ export default function AdminDashboardPage() {
       }
     } catch (err) {
       console.error('[v0] Delete error:', err)
+    } finally {
+      setBookingToDelete(null)
     }
+  }
+
+  const cancelDelete = () => {
+    setBookingToDelete(null)
   }
 
   return (
@@ -234,6 +248,39 @@ export default function AdminDashboardPage() {
           )}
         </div>
       </main>
+
+      {/* Delete Confirmation Modal */}
+      {bookingToDelete && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+          onClick={cancelDelete}
+        >
+          <div
+            className="bg-white rounded-lg shadow-xl w-full max-w-sm p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-lg font-bold text-foreground mb-2">Delete Booking</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Are you sure you want to delete this booking? This action cannot be undone.
+            </p>
+            <div className="flex justify-end gap-3">
+              <Button
+                onClick={cancelDelete}
+                variant="outline"
+                className="border-border"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={confirmDelete}
+                className="bg-red-500 hover:bg-red-600 text-white"
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
