@@ -79,7 +79,7 @@ export function ServiceDetailLayout({
                 >
                   <h3 className="text-lg font-semibold text-navy text-left">{faq.question}</h3>
                   <ChevronDown
-                    className={`w-5 h-5 text-gold flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-gold shrink-0 transition-transform ${
                       expandedFaq === index ? 'rotate-180' : ''
                     }`}
                   />
